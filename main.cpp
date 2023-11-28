@@ -3,9 +3,9 @@ Author: Markus Perez
 Program 5: Connect 4
 TA: Tues 2-2:50
 Date: Nov 17, 2023
-Enviroment: ZyBooks
+Enviroment: Visual Studio Code
 This program plays the game "Connect 4" with two users taking turns making moves until
-there is a winner, draw, or a user chooses to quit.
+there is a winner, draw, or a user chooses to quit. 
 *******************************************************************************/
 #include <iostream>
 #include <string>
@@ -15,7 +15,7 @@ class connect4{ //The connect4 class handles all actions
     public:
         void displayBoard();
         bool isFinished();
-        void checkWinStatus();
+        void checkForWin();
         void userMove(string player);
     private:
         string Board[7][7] = {{"0", "1", "2", "3", "4", "5", "6"},{"-", "-", "-", "-", "-", "-", "-"},{"-", "-", "-", "-", "-", "-", "-"},{"-", "-", "-", "-", "-", "-", "-"},{"-", "-", "-", "-", "-", "-", "-"},{"-", "-", "-", "-", "-", "-", "-"},{"-", "-", "-", "-", "-", "-", "-"}}; //Creates the board as a 7x7 array
@@ -53,12 +53,12 @@ bool connect4::isFinished(){ //Checks to see if the game is finished (someone wo
         return true;
     }
     else //Calls the function to check the win status
-        checkWinStatus();
+        checkForWin();
     
     return winStatus; //Returns the win status if the board is not full and the user did not want to quit
 }
 
-void connect4::checkWinStatus(){ //Checks all possible win conditions, all 4 different in a row combinations, updates win status if needed
+void connect4::checkForWin(){ //Checks all possible win conditions, all 4 different in a row combinations, updates win status if needed
     for(int i = 1; i < 7; i++){ //Checks for horizontal win
         for(int j = 0; j < 4; j++){
             if((Board[i][j] != "-") && (Board[i][j] == Board[i][j + 1]) && (Board[i][j + 1] == Board[i][j + 2]) && (Board[i][j + 2] == Board[i][j + 3])){
