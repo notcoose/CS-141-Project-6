@@ -1,4 +1,4 @@
-# CS-141-Project-6
+# Connect 4
 Project 6 from CS 141 @ UIC during FA23
 
 This project is a program to allow two users to play the game "Connect 4", 
